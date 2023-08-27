@@ -7,7 +7,7 @@ import avatar4 from "../assets/images/avatar-4.png"
 import comment from "../assets/images/icons/chat.png"
 import attachment from "../assets/images/icons/paper-clip.png"
 import calendar from "../assets/images/icons/calendar.png"
-const TaskCard = () => {
+const TaskCard = (prop) => {
     return (
         <div className={'bg-white p-3 rounded-md mb-3'}>
             <div className={'flex justify-between items-center'}>
@@ -40,10 +40,10 @@ const TaskCard = () => {
                     <img src={comment} alt="" className={'w-3 h-3'}/>
                     <h3>15</h3>
                 </div>
-                <div className={'flex justify-start items-center gap-x-1'}>
+                <button className={'flex justify-start items-center gap-x-1'} onClick={prop.onShowModal}>
                     <img src={attachment} alt="" className={'w-3 h-3'}/>
-                    <h3>25</h3>
-                </div>
+                    <h3>{prop.fileLength}</h3>
+                </button>
                 <div className={'flex justify-start items-center gap-x-1'}>
                     <img src={calendar} alt="" className={'w-3 h-3'}/>
                     <h3>30-12-2023</h3>
